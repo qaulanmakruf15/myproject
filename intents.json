@@ -1,0 +1,33 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+   {
+      "tag": "pekerjaan",
+      "patterns": [
+        "Bagaimana cara melamar suatu lowongan pekerjaan ?",
+        "Dimana halaman untuk melihat lowongan pekerjaan ?",
+        "kak, mau lamar pekerjaan gimana ya caranya ?"
+      ],
+      "responses": [
+        "Untuk melihat informasi pekerjaan dapat mengunjungi situs resmi karir.com",
+        "Ya, silahkan mengunjungi karir.com"
+      ]
+    }
+  ]
+}
