@@ -18,3 +18,8 @@ python3 train.py
 ```
 python3 chat.py
 ```
+
+### Email
+```
+email : beritapopuler.idn@gmail.com
+```
