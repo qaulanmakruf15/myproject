@@ -1,28 +1,113 @@
 {
   "intents": [
     {
-      "tag": "greeting",
+      "tag": "sapaan",
       "patterns": [
         "Hi",
         "Hey",
-        "How are you",
-        "Is anyone there?",
-        "Hello",
-        "Good day"
+        "Hallo",
+        "Hi kak",
+        "Hey kak",
+        "Hallo kak",
+        "Mau tanya dong kak",
+        "Selamat *",
+        "Pagi",
+        "Siang",
+        "Sore",
+        "Malam"
       ],
       "responses": [
-        "Hey :-)",
-        "Hello, thanks for visiting",
-        "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Selamat datang, ada yang bisa saya bantu kak ? :-)",
+        "Hello, terimakasih telah berkunjung",
+        "Hi kak, ada yang bisa saya bantu?",
+        "Hi kak, ada yang ingin ditanyakan?"
+      ],
+      "context_set": ""
+    },
+
+    {
+      "tag": "salam",
+      "patterns": [
+        "Assalamualaikum",
+        "Assalammualaikum",
+        "Assalamu'alaikum",
+        "Assalamu'alaikum. Mau nanya dong kak"
+      ],
+      "responses": [
+        "Wa'alaikumussalam, ada yang ingin Anda tanyakan?",
+        "Wa'alaikumussalam, ada yang bisa saya bantu?"
+      ],
+      "context_set": ""
+    },
+
+    {
+      "tag": "terima kasih",
+      "patterns": [
+        "Thank you",
+        "Terima kasih",
+        "Makasih"
+      ],
+      "responses": [
+        "Sama-sama. Semoga membantu :-)",
+        "Sama-sama. Terima kasih sudah bertanya :-)",
+        "Sama-sama. Senang bisa membantu :-)"
       ]
     },
-   {
+
+    {
+      "tag": "validasi",
+      "patterns": [
+        "Validasi email",
+        "Bagaimana cara memvalidasi alamat email saya ?",
+        "Mau validasi email gimana ya?"
+      ],
+      "responses": [
+        "Setelah Anda mendaftar akun JobStreet.com, sistem akan mengirimkan email validasi secara otomatis ke alamat email Anda. Langkah ini diperlukan untuk mengkonfirmasi bahwa alamat email tersebut sudah benar sehingga semua email dari JobStreet.com atau perusahaan akan benar-benar Anda terima. Cara memvalidasi alamat email anda : 1. Carilah email dari lina@jobstreet.com dengan subjek 'Validasi email Anda – dari JobStreet.com'. 2. Klik tautan yang diberikan dalam email."
+      ]
+    },
+
+    {
+      "tag": "validasi",
+      "patterns": [
+        "Tidak dapat menemukan email validasi",
+        "Saya tidak dapat menemukan email validasi ya ?",
+        "Kok enggaka ada email validasi nya ya?"
+      ],
+      "responses": [
+        "Jika Anda tidak sengaja menghapus email validasi tersebut, Anda dapat meminta sistem untuk kirim kembali email validasi:  1. Masuklah ke akun JobStreet.com Anda.  2. Jika Anda belum memvalidasi akun Anda, Anda akan dipandu untuk memvalidasinya. 3. Klik tautan ‘Kirim kembali email verifikasi’.  4. Email verifikasi akan dikirimkan ke email Anda yang terdaftar. 5. Ikutilah petunjuk yang diberikan untuk memvalidasi alamat email Anda."
+      ]
+    },
+
+     {
+      "tag": "kata sandi",
+      "patterns": [
+        "Reset kata sandi",
+        "Saya mau reset kata sandi gimana ya ?",
+        "Caranya reset kata sandi kayak mana ya?"
+      ],
+      "responses": [
+        "Anda dapat mereset kata sandi Anda dengan mengklik disini. Jika anda tidak menerima email tersebut, silahkan cek berkas spam atau junk email folder Anda"
+      ]
+    },
+
+     {
+      "tag": "email",
+      "patterns": [
+        "Ganti email",
+        "Saya mau reset email gimana ya ?",
+        "Caranya ganti kata sandi kayak mana ya?"
+      ],
+      "responses": [
+        "1. Masuklah ke akun JobStreet.com Anda. 2. Klik nama akun Anda di sebelah kanan atas dan pilihlah ‘Akun Saya’. 3. Di bagian ‘Kontak Informasi’, klik ‘Ubah’ untuk mengubah alamat email Anda. 4. Klik ‘Simpan’ untuk menyimpan perubahan. 5. Ikutilah langkah-langkah untuk memvalidasi alamat email baru Anda. 6. Setelah validasi, semua email kami akan dikirimkan ke alamat email Anda yang baru."
+      ]
+    },
+
+    {
       "tag": "pekerjaan",
       "patterns": [
         "Bagaimana cara melamar suatu lowongan pekerjaan ?",
         "Dimana halaman untuk melihat lowongan pekerjaan ?",
-        "kak, mau lamar pekerjaan gimana ya caranya ?"
+        "Mau lamar pekerjaan gimana ya caranya ?"
       ],
       "responses": [
         "Untuk melihat informasi pekerjaan dapat mengunjungi situs resmi karir.com",
