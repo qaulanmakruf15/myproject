@@ -1,67 +1,78 @@
-  
-#Python libraries that we need to import for our bot
-import warnings
-import os
-import json
-import random
-
 from flask import Flask, request
-from pymessenger.bot import Bot
-
 
 app = Flask(__name__)
-ACCESS_TOKEN = 'EAAJJhFUiPAYBAKScpftOTyFBsKm6jRdY0D5cb8vNXPfrklXzZCYrybkZCzyhM2lzWD7TWq7JGgbsOqoTlJ0ghEllD25nhUlUam9pD2wcltBFTXCWbEr9RkzO14EZAlRb8nLFpF9pEw0m31ES0xeQVSeSF6nF877bd4RyfBFpp8ITR0OUrMy'
 
-VERIFY_TOKEN = 'secret'
-bot = Bot(ACCESS_TOKEN)
+FB_API_URL = 'https://graph.facebook.com/v8.0/me/messages'
+VERIFY_TOKEN = 'pass' # <paste your verify token here>
+PAGE_ACCESS_TOKEN = 'EAAp2V59oJJ8BAFsVDuQ25Bs3H8Wt3ZCTQOzF31Qjx0tFHwCVGpUZAp9bLCcr69gyVmZCXVxTWive6lHAVDtgvCsJEgSe2LaOf062ZAQfAouZClENh3nlSkFatPKLUMR0kwrJbGc37j8HG958l1E28sfTunLFssCLaPwxW1ShvewZDZD' # paste your page access token here>"
 
-#We will receive messages that Facebook sends our bot at this endpoint 
-@app.route("/", methods=['GET', 'POST'])
-def receive_message():
-    if request.method == 'GET':
-        """Before allowing people to message your bot, Facebook has implemented a verify token
-        that confirms all requests that your bot receives came from Facebook.""" 
-        token_sent = request.args.get("hub.verify_token")
-        return verify_fb_token(token_sent)
-    #if the request was not get, it must be POST and we can just proceed with sending a message back to user
+
+def get_bot_response(message):
+    """This is just a dummy function, returning a variation of what
+    the user said. Replace this function with one connected to chatbot."""
+    return "This is a dummy response to '{}'".format(message)
+
+
+def verify_webhook(req):
+    if req.args.get("hub.verify_token") == VERIFY_TOKEN:
+        return req.args.get("hub.challenge")
     else:
-        # get whatever message a user sent the bot
-       output = request.get_json()
-       for event in output['entry']:
-          messaging = event['messaging']
-          for message in messaging:
-            if message.get('message'):
-                #Facebook Messenger ID for user so we know where to send response back to
-                recipient_id = message['sender']['id']
-                if message['message'].get('text'):
-                    response_sent_text = get_message()
-                    send_message(recipient_id, response_sent_text)
-                #if user sends us a GIF, photo,video, or any other non-text item
-                if message['message'].get('attachments'):
-                    response_sent_nontext = get_message()
-                    send_message(recipient_id, response_sent_nontext)
-    return "Message Processed"
+        return "incorrect"
+
+def respond(sender, message):
+    """Formulate a response to the user and
+    pass it on to a function that sends it."""
+    response = get_bot_response(message)
+    send_message(sender, response)
 
 
-def verify_fb_token(token_sent):
-    #take token sent by facebook and verify it matches the verify token you sent
-    #if they match, allow the request, else return an error 
-    if token_sent == VERIFY_TOKEN:
-        return request.args.get("hub.challenge")
-    return 'Invalid verification token'
+def is_user_message(message):
+    """Check if the message is a message from the user"""
+    return (message.get('message') and
+            message['message'].get('text') and
+            not message['message'].get("is_echo"))
 
 
-#chooses a random message to send to the user
-def get_message():
-    sample_responses = ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
-    # return selected item to the user
-    return random.choice(sample_responses)
+@app.route("/webhook")
+def listen():
+    """This is the main function flask uses to 
+    listen at the `/webhook` endpoint"""
+    if request.method == 'GET':
+        return verify_webhook(request)
 
-#uses PyMessenger to send response to user
-def send_message(recipient_id, response):
-    #sends user the text message provided via input response parameter
-    bot.send_text_message(recipient_id, response)
-    return "success"
+    if request.method == 'POST':
+        payload = request.json
+        event = payload['entry'][0]['messaging']
+        for x in event:
+            if is_user_message(x):
+                text = x['message']['text']
+                sender_id = x['sender']['id']
+                respond(sender_id, text)
 
-if __name__ == "__main__":
-    app.run()
+        return "ok"
+
+import requests
+
+def send_message(recipient_id, text):
+    """Send a response to Facebook"""
+    payload = {
+        'message': {
+            'text': text
+        },
+        'recipient': {
+            'id': recipient_id
+        },
+        'notification_type': 'regular'
+    }
+
+    auth = {
+        'access_token': PAGE_ACCESS_TOKEN
+    }
+
+    response = requests.post(
+        FB_API_URL,
+        params=auth,
+        json=payload
+    )
+
+    return response.json()
