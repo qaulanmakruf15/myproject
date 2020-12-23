@@ -1,11 +1,10 @@
 {
-  "intents": [
-    {
+  "intents": [{
       "tag": "sapaan",
       "patterns": [
         "Hi",
         "Hey",
-        "Hallo",
+        "Hello",
         "Hi kak",
         "Hey kak",
         "Hallo kak",
@@ -14,12 +13,18 @@
         "Pagi",
         "Siang",
         "Sore",
-        "Malam"
+        "Malam",
+        "Mas",
+        "Mbak",
+        "Kak",
+        "Bg",
+        "Salam",
+        "Ada"
       ],
       "responses": [
-        "Selamat datang, ada yang bisa saya bantu kak ? :-)",
-        "Hello, terimakasih telah berkunjung",
-        "Hi kak, ada yang bisa saya bantu?",
+        "Selamat datang, ada yang bisa saya bantu ? :-)",
+        "Hello terimakasih telah berkunjung, ada yang bisa saya bantu ?",
+        "Hi, ada yang bisa saya bantu?",
         "Hi kak, ada yang ingin ditanyakan?"
       ],
       "context_set": ""
@@ -31,17 +36,17 @@
         "Assalamualaikum",
         "Assalammualaikum",
         "Assalamu'alaikum",
-        "Assalamu'alaikum. Mau nanya dong kak"
+        "Assalamu'alaikum"
       ],
       "responses": [
         "Wa'alaikumussalam, ada yang ingin Anda tanyakan?",
-        "Wa'alaikumussalam, ada yang bisa saya bantu?"
+        "Waalaikumussalam, ada yang bisa saya bantu?"
       ],
       "context_set": ""
     },
 
     {
-      "tag": "terima kasih",
+      "tag": "terima_kasih",
       "patterns": [
         "Thank you",
         "Terima kasih",
@@ -53,6 +58,16 @@
         "Sama-sama. Senang bisa membantu :-)"
       ]
     },
+    
+    {
+      "tag": "salam_perpisahan",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, terimakasih sudah berkunjung",
+        "Have a nice day",
+        "Bye! :-)"
+      ]
+    },
 
     {
       "tag": "validasi",
@@ -62,56 +77,709 @@
         "Mau validasi email gimana ya?"
       ],
       "responses": [
-        "Setelah Anda mendaftar akun JobStreet.com, sistem akan mengirimkan email validasi secara otomatis ke alamat email Anda. Langkah ini diperlukan untuk mengkonfirmasi bahwa alamat email tersebut sudah benar sehingga semua email dari JobStreet.com atau perusahaan akan benar-benar Anda terima. Cara memvalidasi alamat email anda : 1. Carilah email dari lina@jobstreet.com dengan subjek 'Validasi email Anda – dari JobStreet.com'. 2. Klik tautan yang diberikan dalam email."
+        "Setelah Anda mendaftar akun JobStreet.com, sistem akan mengirimkan email validasi secara otomatis ke alamat email Anda. Langkah ini diperlukan untuk mengkonfirmasi bahwa alamat email tersebut sudah benar sehingga semua email dari JobStreet.com atau perusahaan akan benar-benar Anda terima.\n\n Cara memvalidasi alamat email anda :\n1.  Carilah email dari LiNa @jobstreet.com dengan subjek 'Validasi email Anda – dari JobStreet.com'.\n2.  Klik tautan yang diberikan dalam email."
       ]
     },
 
     {
-      "tag": "validasi",
+      "tag": "email_validasi",
       "patterns": [
-        "Tidak dapat menemukan email validasi",
+        "Email validasi kenapa tidak ada ?",
         "Saya tidak dapat menemukan email validasi ya ?",
-        "Kok enggaka ada email validasi nya ya?"
+        "Kok tidak ada email validasi nya ya ?"
       ],
       "responses": [
-        "Jika Anda tidak sengaja menghapus email validasi tersebut, Anda dapat meminta sistem untuk kirim kembali email validasi:  1. Masuklah ke akun JobStreet.com Anda.  2. Jika Anda belum memvalidasi akun Anda, Anda akan dipandu untuk memvalidasinya. 3. Klik tautan ‘Kirim kembali email verifikasi’.  4. Email verifikasi akan dikirimkan ke email Anda yang terdaftar. 5. Ikutilah petunjuk yang diberikan untuk memvalidasi alamat email Anda."
+        "Jika Anda tidak sengaja menghapus email validasi tersebut, Anda dapat meminta sistem untuk kirim kembali email validasi:\n1. Masuklah ke akun JobStreet.com Anda.\n2.  Jika Anda belum memvalidasi akun Anda, Anda akan dipandu untuk memvalidasinya.\n3. Klik tautan ‘Kirim kembali email verifikasi’.\n4.  Email verifikasi akan dikirimkan ke email Anda yang terdaftar.\n5. Ikutilah petunjuk yang diberikan untuk memvalidasi alamat email Anda."
       ]
     },
 
-     {
-      "tag": "kata sandi",
+    {
+      "tag": "kata_sandi",
       "patterns": [
         "Reset kata sandi",
         "Saya mau reset kata sandi gimana ya ?",
-        "Caranya reset kata sandi kayak mana ya?"
+        "Caranya reset kata sandi bagaimana ya ?"
       ],
       "responses": [
-        "Anda dapat mereset kata sandi Anda dengan mengklik disini. Jika anda tidak menerima email tersebut, silahkan cek berkas spam atau junk email folder Anda"
+        "Anda dapat mereset kata sandi Anda dengan mengklik disini https://myjobstreet.jobstreet.co.id/home/forgot-password.php.\nUntuk mengganti password kata sandi,\n1. Masukkan alamat email Anda dalam kotak teks.\n2. Tick pada ‘Saya bukan robot' dan mengikuti verifikasi CAPTCHA.\n3. Klik pada ‘Kirim Email untuk Ubah Password’.\n4. Anda akan menerima email dengan link reset password. Klik link tersebut untuk mereset password mengganti kata sandi.\n*Jika anda tidak menerima email tersebut, silahkan cek berkas spam atau junk email folder Anda.\n\nUntuk menukarkan kata sandi anda, silahkan pastikan ia memenuhi syarat sebagai berikut:\n1. Terdiri minimal 8 karakter.\n2. Pastikan karakter anda terdiri daripada Alfanumerik (a-z, 0-9).\n3. Dengan huruf besar (A-Z) dan huruf kecil (a-z).\n\nJika Anda tidak lagi memiliki akses ke email yang terkait dengan akun JobStreet.com Anda, silahkan hubungi kami disini https://myjobstreet.jobstreet.co.id/home/forgot-password.php dengan informasi berikut untuk tujuan verifikasi:\n1. Alamat email yang terdaftar dengan JobStreet.com\n2. Alamat email yang Anda yang dapat kami hubungi\n3. Nama lengkap dan nomor identitas Anda\n4. Lembaga / Universitas tempat Anda menuntut ilmu\n5. Tahun kelulusan\n6. Perusahaan tempat Anda bekerja pertama kali"
       ]
     },
 
-     {
+    {
       "tag": "email",
       "patterns": [
         "Ganti email",
         "Saya mau reset email gimana ya ?",
-        "Caranya ganti kata sandi kayak mana ya?"
+        "Caranya ganti email bagaimana ya?"
       ],
       "responses": [
-        "1. Masuklah ke akun JobStreet.com Anda. 2. Klik nama akun Anda di sebelah kanan atas dan pilihlah ‘Akun Saya’. 3. Di bagian ‘Kontak Informasi’, klik ‘Ubah’ untuk mengubah alamat email Anda. 4. Klik ‘Simpan’ untuk menyimpan perubahan. 5. Ikutilah langkah-langkah untuk memvalidasi alamat email baru Anda. 6. Setelah validasi, semua email kami akan dikirimkan ke alamat email Anda yang baru."
+        "1. Masuklah ke akun JobStreet.com Anda.\n2.  Klik nama akun Anda di sebelah kanan atas dan pilihlah ‘Akun Saya’.\n3. Di bagian ‘Kontak Informasi’, klik ‘Ubah’ untuk mengubah alamat email Anda.\n4. Klik ‘Simpan’ untuk menyimpan perubahan.\n5. Ikutilah langkah-langkah untuk memvalidasi alamat email baru Anda.\n6.  Setelah validasi, semua email kami akan dikirimkan ke alamat email Anda yang baru."
       ]
     },
 
     {
-      "tag": "pekerjaan",
+      "tag": "peluang",
       "patterns": [
-        "Bagaimana cara melamar suatu lowongan pekerjaan ?",
-        "Dimana halaman untuk melihat lowongan pekerjaan ?",
-        "Mau lamar pekerjaan gimana ya caranya ?"
+        "Peluang",
+        "Bagaimana agar peluang saya menjadi besar dan dapat dicari ?",
+        "Cara terbuka terhadap peluang dan dapat dicari bagaimana ?"
       ],
       "responses": [
-        "Untuk melihat informasi pekerjaan dapat mengunjungi situs resmi karir.com",
-        "Ya, silahkan mengunjungi karir.com"
+        "Ketika Anda menetapkan privasi Anda menjadi ‘Dicari dengan Detil Informasi’, perusahaan dapat menemukan Profil JobStreet.com Anda dan menghubungi Anda untuk sebuah peluang kerja. Riwayat lamaran Anda tidak akan diungkap di sini.\n\n3 alasan yang baik untuk terus memperbarui Profil JobStreet.com Anda dan membuatnya dapat dicari, bahkan ketika Anda tidak sedang mencari pekerjaan.\n1. Dapat dicari oleh perusahaan terkemuka. 80% dari perusahaan tersebut menggunakan JobStreet.com untuk mencari kandidat.\n2. Mendapatkan penawaran yang relevan. Sebuah profil yang usang akan membuat Anda mendapat penawaran yang tidak relevan.\n3. Anda tidak pernah tahu kapan Anda membutuhkannya. Dalam masa-masa yang bergejolak sekarang ini, tetap menjaga peluang Anda terbuka adalah hal yang terbaik.\nJangan tunda lagi, perbaruilah Profil JobStreet.com Anda dan buatlah agar dapat dicari sekarang juga karena Peluang BESAR berikutnya menanti Anda."
+      ]
+    },
+
+    {
+      "tag": "pengaturan_privasi",
+      "patterns": [
+        "Pengaturan privasi",
+        "Bagaimana cara mengatur privasi saya ?",
+        "Caranya mengatur privasi seperti apa ?"
+      ],
+      "responses": [
+        "Terdapat 2 pilihan dalam Pengaturan Privasi:\n1. Dicari dengan Detil Informasi – Memungkinkan perusahaan untuk mencari Profil JobStreet.com Anda dan melihat nama dan rincian kontak Anda.\n2. Tidak dapat Dicari – Tidak memungkinkan perusahaan untuk mencari Profil JobStreet.com Anda.\n\n Untuk mengatur tingkat privasi:\n1. Masuklah ke akun JobStreet.com Anda.\n2. Masuklah ke ‘MyJobStreet’ > ‘Lihat Profil’.\n3. Pada menu di sebelah kiri, pilihlah ‘Pengaturan Privasi’. Jika Anda menggunakan tablet atau telepon seluler, ketuklah tautan Edit untuk membuka menunya.\n4. Pilihlah pengaturan privasi yang Anda inginkan dan klik ‘Simpan’."
+      ]
+    },
+
+    {
+      "tag": "berhenti_berlangganan_email",
+      "patterns": [
+        "Saya mau berhenti berlangganan email",
+        "Bagaimana cara berhenti berlangganan email dari JobStreet ?",
+        "Dimana saya bisa berhenti berlangganan email dari JobStreet ?"
+      ],
+      "responses": [
+        "1. Masuklah ke akun JobStreet.com Anda.\n2. Klik nama akun Anda di sebelah kanan atas dan pilihlah ‘Akun Saya’.\n3. Di bagian ‘Berlangganan’, klik ‘Ubah’.\n4. Ubahlah pengaturan menjadi ‘Tidak berlangganan’.\n5. Klik ‘Simpan’ untuk menyimpan perubahan."
+      ]
+    },
+
+    {
+      "tag": "menghapus_akun",
+      "patterns": [
+        "Menghapus akun",
+        "Bagaimana cara menghapus akun JobStreet saya ?",
+        "Cara menghapus akun JobStreet seperti apa ?"
+      ],
+      "responses": [
+        "Alih-alih menghapus akun Anda, Anda dapat mempertimbangkan untuk mengurangi frekuensi pekerjaan email pemberitahuan dari harian menjadi mingguan. Dengan begitu, Anda masih akan terus mendapat informasi tentang peluang karir yang tersedia.\n\nJika Anda tidak ingin menerima email pemberitahuan pekerjaan, Anda dapat memilih untuk berhenti berlangganan dari semua email pemberitahuan tanpa menghapus akun JobStreet.com sehingga Anda masih akan memiliki akses ke Profil JobStreet.com Anda di masa depan. Jika Anda tetap ingin menghapus akun Anda, ikutilah langkah-langkah di bawah ini:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik nama Anda yang terletak di sebelah kanan atas halaman.\n3. Pilihlah ‘Akun Saya’ dari menu drop-down.\n4. Klik tautan ‘Hapus Akun Saya’.\n5. Masukkan alasan dari penghapusan akun Anda dan klik tombol ‘Hapus Akun’.\n Setelah Anda menghapus akun, Anda tidak akan dapat mengaksesnya lagi."
+      ]
+    },
+
+    {
+      "tag": "pemecahan_masalah",
+      "patterns": [
+        "Pemecahan Masalah",
+        "Bagaimana cara langkah-langkah Pemecahan Masalah dasar ?",
+        "Langkah-langkah Pemecahan Masalah dasar seperti apa ?"
+      ],
+      "responses": [
+        "Jika Anda mengalami masalah saat mengakses JobStreet.com, lakukanlah langkah-langkah pemecahan masalah berikut.\n\n1. Pastikan bahwa Anda menggunakan browser versi terbaru dan koneksi internet Anda stabil.\n2. Coba lagi pada browser yang berbeda atau komputer lain.\n3. Mengatur konfigurasi browser Anda sebagai berikut: Bersihkan cookie dan cache browser internet Anda (Petunjuk), Aktifkan JavaScript (Petunjuk), Aktifkan Cookies (Petunjuk), Nonaktifkan plug-in pemblokir iklan (Instructions), Nonaktifkan pemblokir Pop-up (Petunjuk)\nJika kendala masih tetap berlanjut, silahkan menghubungi kami disini."
+      ]
+    },
+
+    {
+      "tag": "profil_jobstreet",
+      "patterns": [
+        "Profil JobStreet",
+        "Bagaimana mengatur Profil JobStreet dan menggunggah resume saya ?",
+        "Caranya mengatur profil JobStreet dan mengunggah resume seperti apa ?"
+      ],
+      "responses": [
+        "Terdapat 2 jenis resume pada akun JobStreet.com Anda:\n1. Profil JobStreet.com.\n2. Resume Diunggah\n\nSementara keduanya dikirimkan ke perusahaan ketika Anda melamar pekerjaan, kami mendorong Anda untuk selalu melengkapi Profil JobStreet.com Anda untuk mempermudah proses pemilihan dari sisi perusahaan dan meningkatkan pekerjaan yang cocok."
+      ]
+    },
+
+    {
+      "tag": "Profil_lengkap",
+      "patterns": [
+        "Profil lengkap",
+        "Apa Keuntungan memiliki Profil JobStreet yang lengkap ?",
+        "Apa pengaruh memiliki Profil JobStreet yang lengkap untuk melamar kerja?"
+      ],
+      "responses": [
+        "Anda harus melengkapi Profil Anda karena:\n\n1. Sebuah Profil JobStreet.com yang lengkap berisi informasi yang diperlukan oleh perusahaan untuk mempertimbangkan lamaran kerja Anda. Itulah mengapa sangatlah penting bahwa Anda memberikan banyak rincian tentang diri dan pekerjaan dalam profil Anda untuk meningkatkan peluang mendapatkan respon yang positif dari perusahaan.\n2. Anda harus melengkapi Profil JobStreet.com Anda untuk melamar pekerjaan.\n3. Anda juga akan mendapatkan pekerjaan yang cocok yang lebih akurat jika Profil JobStreet.com Anda lengkap, karena informasi tambahan dalam profil Anda akan digunakan untuk mencocokkan pekerjaan untuk Anda secara lebih akurat."
+      ]
+    },
+
+    {
+      "tag": "Memperbarui_profil",
+      "patterns": [
+        "Memperbarui Profil",
+        "Bagaimana cara memperbarui Profil JobStreet saya ?",
+        "Langkah-langkah untuk Memperbarui Profil JobStreet.com seperti apa ?"
+      ],
+      "responses": [
+        "Untuk memperbarui Profil JobStreet.com Anda.\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’ > ‘Ubah Profil’.\n3. Anda dapat mengakses berbagai bagian dari profil Anda dari menu di sebelah kiri. Jika Anda menggunakan tablet atau telepon seluler, ketuklah tautan ‘Ubah’ untuk membuka menunya.\n4. Klik ikon ‘Ubah’ di bagian yang ingin Anda perbarui.\n5. Setelah Anda membuat perubahan yang diperlukan, klik tombol ‘Simpan’."
+      ]
+    },
+
+    {
+      "tag": "Memperbarui_gaji",
+      "patterns": [
+        "Memperbarui Gaji",
+        "Mengganti Gaji",
+        "Bagaimana memperbarui gaji yang saya harapkan ?",
+        "Caranya mengganti gaji seperti yang saya harapakan bagaimana ?"
+      ],
+      "responses": [
+        "Untuk memperbarui Gaji yang Anda harapkan:\n\n1. Masuklah ke akun JobStreet.com Anda.\n1. Klik ‘MyJobStreet’ > ‘Ubah Profil’.\n3. Klik ‘Info Lain’ di menu sebelah kiri. Jika Anda menggunakan tablet atau telepon seluler, ketuklah tautan ‘Ubah’ untuk membuka menunya.\n4. Klik ikon ‘Ubah’.\n5. Anda akan melihat ‘Gaji yang Diharapkan’. Lakukan perubahan yang diperlukan dan klik tombol ‘Simpan’.\n6. Gaji yang diharapkan wajib diisi untuk memungkinkan pencocokan pekerjaan yang lebih baik.\nGaji yang diharapkan wajib diisi untuk memungkinkan pencocokan pekerjaan yang lebih baik."
+      ]
+    },
+
+    {
+      "tag": "foto_profil",
+      "patterns": [
+        "Foto profil",
+        "Mengunggah foto profil",
+        "Bagaimana cara mengunggah foto profil ?",
+        "Langkah-langkah untuk mengunggah foto profil seperti apa ?"
+      ],
+      "responses": [
+        "Untuk mengunggah foto profil Anda:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’ > ‘Ubah Profil’.\n3. Geser kursor ke atas kotak foto profil di sebelah kiri halaman dan klik ‘Unggah’.\n4. Ikutilah petunjuk yang diberikan untuk mengunggah foto Anda.\n\nFoto Anda haruslah:\n1. Format Foto yang harus berupa format JPEG (.jpg atau .jpeg) atau format GIF (.gif). Sehingga ekstensi file Anda haruslah .gif atau .jpg atau .png. Misalnya: myphoto.gif atau myphoto.jpg.\n2. Ukuran file tidak boleh melebihi 20kb.\n3. Dimensi foto yang direkomendasikan: 150 (L) x 150 (T) piksel.\nAnda juga dapat mengunggah foto Anda dengan Aplikasi mobile JobStreet.com."
+      ]
+    },
+
+    {
+      "tag": "lulusan_baru",
+      "patterns": [
+        "lulusan baru",
+        "Saya adalah lulusan baru",
+        "Saya lulusan baru dan tidak memiliki pengalaman kerja, apa yang harus saya lakukan ?",
+        "Bagaimana cara lulusan baru mengatur profil ?"
+      ],
+      "responses": [
+        "Jika Anda tidak memiliki pengalaman kerja, informasikan saja bahwa Anda adalah lulusan baru dalam Profil JobStreet.com Anda.\n\n Klik ‘MyJobStreet’ pada menu dan pilihlah ‘Edit Profil’. Masuklah ke bagian ‘Pengalaman’ untuk menampilkan (mengatur) ‘Tingkat Pengalaman’ Anda."
+      ]
+    },
+
+    {
+      "tag": "resume",
+      "patterns": [
+        "Mengunggah resume",
+        "Bagaimana cara untuk mengunggah resume ?",
+        "Cara memperbarui resume saya seperti apa ?"
+      ],
+      "responses": [
+        "Untuk memperbarui resume unggahan Anda:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’ > ‘Ubah Profil’.\n3. Pada menu di sebelah kiri, pilihlah ‘Resume Diunggah’. Jika Anda menggunakan tablet atau telepon seluler, ketuklah tautan ‘Ubah’ untuk membuka menunya.\n4. Klik ‘Unggah Sekarang’, ‘Lihat’ atau ‘Ganti’.\n5. Ikutilah petunjuk yang diberikan untuk menemukan resume terbaru Anda di komputer.\n6. Klik ‘Unggah.\n\nCatatan:\n1 File Anda haruslah dalam format Word (.doc atau .docx), Text (.txt), Rich Text (.rtf) atau PDF (.pdf).\n2. Ukuran file tidak boleh melebihi 1 MB."
+      ]
+    },
+
+    {
+      "tag": "profil_untuk_lamaran",
+      "patterns": [
+        "Profil lamaran",
+        "Bagaimana mengatur Profil JobStreet untuk setiap lamaran saya ?",
+        "Cara saya untuk mengatur Profil JobStreet untuk setiap lamaran dan unggahan seperti apa ?"
+      ],
+      "responses": [
+        "Ketika Anda melamar suatu pekerjaan, baik Profil JobStreet.com dan Resume Diunggah (jika tersedia) akan dapat diakses oleh perusahaan.\n\nProfil JobStreet.com (MyJobStreet > Lihat Profil)\nDengan Profil JobStreet.com, sistem menangkap informasi dalam profil Anda di setiap lamaran pekerjaan Anda. Ini berarti bahwa setiap perubahan yang dilakukan di kemudian hari terhadap Profil JobStreet.com Anda tidak akan mempengaruhi lamaran masa lalu. Jika Anda ingin menyesuaikan informasi tertentu (misalnya Gaji yang Diharapkan) dalam Profil JobStreet.com Anda untuk beberapa pekerjaan, editlah Gaji yang Anda harapkan sebelum melamar ke masing-masing pekerjaan.\n\nResume Diunggah (MyJobStreet > Lihat Profil > Resume Diunggah)\nDengan resume yang diunggah, perusahaan akan selalu melihat versi terbaru. Jika Anda memperbarui Resume Diunggah, semua perusahaan (termasuk lamaran yang dibuat di masa lalu) akan memiliki akses ke resume diunggah terbaru. Klik disini untuk informasi lebih lanjut tentang Resume Diunggah. "
+      ]
+    },
+
+    {
+      "tag": "tips_profil",
+      "patterns": [
+        "Tips profil",
+        "Kasih tips dan trik dong untuk profil saya",
+        "Bagaimana profil saya dapat menarik perhatian ?"
+      ],
+      "responses": [
+        "1. Buatlah sederhana dan ringkas.Para perusahaan menyaring profil yang sangat banyak setiap harinya dan mereka hanya memiliki sedikit waktu untuk itu. Profil JobStreet.com Anda harus menekankan apa yang bisa Anda tawarkan dengan segera. Tujuannya adalah untuk menarik perhatian dan menampilkan kemampuan Anda dengan segera.\n2. Relevan. Rampingkanlah bagian ‘Pengalaman’ dengan hanya menyertakan pengalaman kerja yang relevan. Yang lebih penting, pastikan untuk membuat daftar prestasi kuantitatif dan kontribusi Anda kepada perusahaan, bukan sekedar deskripsi umum dari lingkup pekerjaan Anda. Hal ini akan membantu Anda untuk tampil lebih menonjol dari para kandidat lainnya.\n3. Lulusan baru juga bisa menjadi luar biasa. Jika Anda adalah lulusan baru, masukkan semua pengalaman yang mungkin menambah nilai Profil JobStreet.com Anda, baik itu berupa proyek sekolah di mana Anda memegang peranan yang penting, tugas paruh waktu, pekerjaan freelance, magang, bahkan keterlibatan Anda dalam kegiatan olahraga atau ekstrakurikuler. Masukkan pembelajaran utama dan prestasi Anda dari pengalaman-pengalaman tersebut untuk menggambarkan kualitas seperti kepemimpinan, determinasi, kredibilitas, kompetensi, integritas, kepercayaan diri, dll.\n4. Sertakan Kata kunci.Luangkanlah waktu untuk mengidentifikasi kata kunci yang tepat, menambahkan keterampilan dan kemampuan yang benar, dan menyempurnakan kata kunci tersebut ke dalam Profil JobStreet.com Anda secara cermat. Langkah yang bagus untuk memulainya adalah dengan mempelajari iklan lowongan kerja terkini untuk mencari tahu rangkaian ketrampilan yang dicari oleh para perusahaan.\n5. Jangan sampai ada kesalahan. Kesalahan ejaan dan tata bahasa di dalam Profil JobStreet.com atau resume Anda yang diunggah menunjukkan bahwa Anda tidak memiliki orientasi terhadap ketelitian dan tidak menyusun lamaran pekerjaan tersebut dengan serius. Mintalah teman atau mantan guru yang bisa Anda percaya untuk memeriksa Profil JobStreet.com dan resume diunggah Anda secara menyeluruh."
+      ]
+    },
+
+    {
+      "tag": "pemberitahuan_pekerjaan_lina",
+      "patterns": [
+        "Pemberitahuan pekerjaan",
+        "Apa itu LiNa ?",
+        "Bagaimana cara mengatur akun untuk menerima Pemberitahuan Pekerjaan LiNa ?",
+        "Cara mengatur akun untuk menerima Pemberitahuan Pekerjaan LiNa seperti apa ?"
+      ],
+      "responses": [
+        "LiNa adalah sistem pencocokan pekerjaan secara online di JobStreet.com. ‘Lowongan yang sesuai LiNa’ dihasilkan berdasarkan profil Pemberitahuan Lowongan LiNa Anda. Anda dapat melihat hasil terbaru dari pekerjaan yang cocok pada laman beranda akun JobStreet.com Anda, atau berlangganan Pemberitahuan Pekerjaan harian atau mingguan LiNa agar dikirimkan ke email Anda.\n\n Untuk mendapatkan kecocokan pekerjaan yang akurat, Sempurnakanlah profil Pemberitahuan Pekerjaan LiNa Anda secara cermat dengan menyesuaikan informasi seperti lokasi, spesialisasi, tingkat jabatan, tahun pengalaman, purna waktu / paruh waktu dan sebagainya.\n\n Untuk Mengatur profil Pemberitahuan Pekerjaan LiNa Anda:\n1. Masuklah ke akun JobStreet.com Anda.\n2. Carilah bagian ‘Lowongan yang sesuai LiNa’ dari halaman ‘Beranda’.\n3. Jika Anda tidak memiliki Pemberitahuan Pekerjaan LiNa, pilihlah ‘Tambah/Ubah Profil LiNa’ untuk membuatnya.\n4. Jika Anda telah memiliki satu atau lebih Pemberitahuan Lowongan LiNa, pilihlah profil Pemberitahuan Pekerjaan LiNa yang ingin Anda ubah.\n5. Klik ‘Pilihan’ untuk mengedit kriteria pilihan Anda. Anda juga dapat mengatur frekuensi berlangganan email LiNa Anda di sini.\n6. Klik ‘Simpan & lihat lowongan yang Sesuai’."
+      ]
+    },
+
+    {
+      "tag": "lowongan_lina",
+      "patterns": [
+        "Melihat lowongan",
+        "Melihat lowongan pekerjaan",
+        "Bagaimana cara melihat Lowongan yang sesuai LiNa ?",
+        "Langkah-langkah melihat Lowongan yang sesuai LiNa seperti apa ?"
+      ],
+      "responses": [
+        "1. Masuklah ke akun JobStreet.com Anda.\n2. Di bagian Lowongan yang sesuai LiNa, lowongan yang sesuai dengan profil pemberitahuan lowongan Anda akan dicantumkan di sini.\n3. Jika Anda berlangganan Email Pemberitahuan Lowongan LiNa, lowongan yang sama akan dikirim ke email Anda dengan frekuensi yang diinginkan."
+      ]
+    },
+
+    {
+      "tag": "kata_kunci_lowongan_lina",
+      "patterns": [
+        "Kata kunci",
+        "Tips Kata kunci dalam profil Pemberitahuan Lowongan LiNa apa ya ?",
+        "Bagaimana cara mencari lowongan yang sesuai dengan yang saya inginkan ?"
+      ],
+      "responses": [
+        "Gunakan kata kunci untuk memberikan informasi yang lebih spesifik tentang lowongan yang Anda inginkan. Sebagai contoh:\n\n1. Jika Anda ingin mencari lowongan dari perusahaan tertentu, gunakanlah nama perusahaan tersebut sebagai kata kunci, misalnya, Dell, Intel.\n2. Jika Anda telah memilih ‘IT’ sebagai bidang spesialisasi Anda, tetapi ingin bekerja menggunakan JAVA dan DCOM, maka kata kuncinya haruslah: java, dcom.\n3. Jika Anda telah memilih ‘Lainnya’ sebagai bidang spesialisasi dan Anda ingin bekerja di industri mode (fashion), maka kata kuncinya haruslah: mode (fashion), modeling.\n\n Sangatlah penting bahwa kata kunci yang Anda pilih dieja dengan benar dan dikenali oleh LiNa. Berikut adalah beberapa tips lebih lanjut tentang kata kunci:\n1. Jangan menggunakan kata-kata fungsional seperti ‘suatu’, ‘the’, ‘dan’, ‘atau’, dll.\n2. Kata kunci berkarakter tunggal tidaklah valid, misalnya ‘c’, ‘z’, ‘a’, dll.\n3. Hindari penggunaan simbol seperti ‘/’, ‘&’, dll."
+      ]
+    },
+
+    {
+      "tag": "lebih_banyak_lowongan",
+      "patterns": [
+        "lebih banyak Lowongan",
+        "Bagaimana cara mendapatkan lebih banyak Lowongan yang sesuai dengan yang saya inginkan ?",
+        "Cara mendapatkan lebih banyak Lowongan yang sesuai gimana ya ?"
+      ],
+      "responses": [
+        "Jika hasil pencocokan Lina sangat terbatas, periksalah Lina profil Pemberitahuan lowongan Anda dengan memilih kriteria yang lebih fleksibel.\n\n1. Cobalah menghapus beberapa kriteria yang kurang penting.\n2. Pilihlah rentang area spesialisasi yang diinginkan yang lebih luas. \n3. Cobalah mengurangi kata kunci, karena hal tersebut seringkali membatasi hasil yang cocok.\n\n Jika ada terlalu banyak kecocokan lowongan yang tidak berkaitan, kembalilah dan sesuaikan pilihan Anda sekali lagi."
+      ]
+    },
+
+    {
+      "tag": "tidak_menerima_email",
+      "patterns": [
+        "Tidak menerima email",
+        "Saya kok tidak dapat menerima email pemeberitahuan lowongan ya ?",
+        "Kenapa saya tidak mendapat menerima email Pemberitahuan Lowongan LiNa ?"
+      ],
+      "responses": [
+        "Jika Anda tidak menerima Pemberitahuan lowongan dari LiNa, berikut adalah beberapa kemungkinan penyebabnya:\n\n1. Kotak surat Anda mungkin sudah penuh.\n2. Alamat email Anda mungkin salah – Periksalah bagian ‘Akun Saya’ untuk memastikan bahwa alamat email pada akun MyJobStreet Anda sudah benar.\n3. Anda mungkin memilih terlalu banyak kriteria untuk Pemberitahuan lowongan Anda – Periksalah halaman ‘Beranda’ pada MyJobStreet Anda untuk memeriksa apakah ada lowongan yang sesuai dengan profil Pemberitahuan Lowongan LiNa Anda.\n4. Penyedia layanan email Anda mungkin telah diblokir atau mem-filter email-email LiNa – Periksalah Folder Spam atau Junk."
+      ]
+    },
+
+    {
+      "tag": "berhenti_berlangganan_lowongan",
+      "patterns": [
+        "Berhenti berlangganan email lowongan LiNa",
+        "Bagaimana cara berhenti berlangganan email pemberitahuan dari Lowongan LiNa ?",
+        "Saya mau berhenti berlangganan email pemberitahuan lowongan LiNa"
+      ],
+      "responses": [
+        "Cara berhenti berlangganan dari email Pemberitahuan Lowongan LiNa adalah sebagai berikut:\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘Beranda’.\n3. Di bawah ‘Informasi Lowongan dari LiNa’, pilihlah profil Pemberitahuan Lowongan LiNa yang ingin Anda hentikan langganannya.\n4. Klik ‘Ubah’.\n5. Sesuaikan Frekuensi Email Pemberitahuan.\n6. Klik ‘Simpan & lihat Lowongan yang sesuai’.\n\n Sebagai alternatif, anda dapat memilih untuk mengurangi Frekuensi Email Pemberitahuan LiNa.\n\n Berikanlah LiNa waktu barang sampai tiga hari untuk memperbarui semua pemberitahuan lowongan kepada anda. Setelah itu, LiNa akan mengirimkan atau menghentikan pengiriman lowongan berdasarkan Frekuensi Email Pemberitahuan yang diperbarui."
+      ]
+    },
+
+    {
+      "tag": "pencarian_lowongan",
+      "patterns": [
+        "Pencarian Lowongan",
+        "Bagaimana cara menjelajahi bagian pencarian Lowongan ?",
+        "Apakah bisa melakukan pencarian bedasarkan nama ?"
+      ],
+      "responses": [
+        "Selain menuliskan kata kunci di kotak pencarian, Anda juga dapat mencoba melakukan pencarian berdasarkan nama jabatan (posisi), spesialisasi, dan gaji minimal. Gunakan opsi ‘Pencarian Lanjutan’ jika Anda memiliki kriteria pencarian kerja yang lebih spesifik."
+      ]
+    },
+
+    {
+      "tag": "pemberitahuan_lowongan",
+      "patterns": [
+        "Pemberitahuan lowongan",
+        "Bagaimana membuat lowongan diberitahukan kepada saya ?",
+        "Bagaimana cara agar saya mendapatkan pemberitahuan mengenai lowongan terbaru ?"
+      ],
+      "responses": [
+        "Berdasarkan pada profil Pemberitahuan Lowongan LiNa Anda, LiNa secara otomatis akan merekomendasikan jabatan (posisi) yang relevan untuk Anda pertimbangkan. Anda dapat menemukan kecocokan ini pada halaman ‘Home’ di akun JobStreet.com Anda, atau membuat lowongan yang sesuai tersebut di email-kan kepada Anda secara mingguan atau harian."
+      ]
+    },
+
+    {
+      "tag": "lowongan_menemukan_saya",
+      "patterns": [
+        "Biarkan lowongan yang menemukan saya",
+        "Bagaimana cara agar lowongan dapat menemukan profil saya ?",
+        "Tips supaya lowongan dapat menemukan profil saya gimana ya ?"
+      ],
+      "responses": [
+        "Jika Anda terbuka terhadap peluang, pertimbangkanlah untuk membuat para calon perusahaan menemukan profil Anda secara aktif dengan membuat Profil JobStreet.com Anda menjadi ‘Dapat Dicari’ (MyJobStreet > Tinjau Profil > Pengaturan Privasi). Jika perusahaan merasa bahwa Anda cocok, mereka akan menghubungi Anda secara langsung."
+      ]
+    },
+
+    {
+      "tag": "melamar_lowongan",
+      "patterns": [
+        "Melamar lowongan",
+        "Melamar lowongan pekerjaan",
+        "Bagaimana cara melamar suatu lowongan ?",
+        "Cara untuk melamar kerja bagaimana ya ?"
+      ],
+      "responses": [
+        "Cara melamar lowongan yang diiklankan di JobStreet.com adalah sebagai berikut:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Pastikan bahwa Profil JobStreet.com Anda telah lengkap.\n3. Klik Nama Jabatan (Posisi) untuk melihat iklan lowongan.\n4. Klik tombol “Lamar sekarang” yang terletak di bagian bawah iklan lowongan untuk mengirimkan lamaran Anda. Profil JobStreet.com dan Resume Diunggah akan dikirimkan ke perusahaan.\n5. Gunakanlah metode ini untuk melamar lowongan di JobStreet.com sehingga Anda dapat melacak lamaran lowongan di akun Anda (‘MyJobStreet’ > ‘Aplikasi Lamaran Online’)."
+      ]
+    },
+
+    {
+      "tag": "promosi_diri",
+      "patterns": [
+        "Promosi Diri Anda",
+        "Bagaimana cara promosi diri saya ?",
+        "Cara agar diri saya di promosikan gimana ya ?"
+      ],
+      "responses": [
+        "Sebuah Promosi (pitch) adalah tulisan singkat opsional yang berisi 300 karakter yang memberikan Anda kesempatan untuk tampil menonjol dari para pelamar lainnya. Isinya haruslah singkat dan ringkas untuk menarik perhatian perusahaan dalam proses pemilihan."
+      ]
+    },
+
+    {
+      "tag": "profil_jobstreet_setelah_pengiriman_lamaran",
+      "patterns": [
+        "Memperbarui Profil setelah pengiriman lamaran kerja",
+        "Bagaimana cara memperbarui Profil JobStreet setelah pengiriman lamaran kerja ?",
+        "Cara Memperbarui Profil JobStreet.com setelah pengiriman lamaran kerja gimana ya ?"
+      ],
+      "responses": [
+        "Jika Anda memperbarui Profil JobStreet.com Anda setelah mengirimkan lamaran kerja, perusahaan tidak akan secara otomatis melihat Profil JobStreet.com yang telah diperbarui tersebut. Salinan Profil JobStreet.com Anda yang ada di perusahaan tetap tidak berubah. Jika Anda ingin mengirimkan Profil JobStreet.com Anda yang telah diperbarui, Anda cukup mengirimkan lamaran ulang untuk lowongan yang sama tersebut."
+      ]
+    },
+
+    {
+      "tag": "memeperbarui_resume",
+      "patterns": [
+        "Memperbarui resume",
+        "Bagaimana memperbarui Resume Diunggah setelah pengiriman lamaran kerja ?",
+        "Cara memperbarui Resume Diunggah setelah pengiriman lamaran kerja gimana ya ?"
+      ],
+      "responses": [
+        "Jika Anda memperbarui Resume Diunggah setelah mengirimkan lamaran lowongan, perusahaan akan dapat melihat resume unggahan Anda yang telah diperbarui. Secara umum, perusahaan akan selalu dapat mengunduh versi terbaru dari Resume Diunggah tanpa Anda perlu mengirimakan kembali lamaran untuk lowongan tersebut."
+      ]
+    },
+
+    {
+      "tag": "riwayat_hidup",
+      "patterns": [
+        "riwayat hidup",
+        "Bisakah saya hanya email-kan riwayat hidup kepada anda ?",
+        "Apakah saya harus mengirimkan email riwayat hidup kepada anda ?"
+      ],
+      "responses": [
+        "Jangan mengirimkan email riwayat hidup atau sertifikat Anda kepada kami. Jika Anda belum membuat profil Anda dengan JobStreet.com, maka kami sangat menyarankan Anda untuk melakukannya. Cukup dengan mendaftarkan diri Anda disini https://myjobstreet.jobstreet.co.id/registration/simple-signup.php. Jika Anda adalah pengguna lama dan ingin memperbarui Profil JobStreet.com, Masuklah ke akun JobStreet.com Anda, dan kemudian perbarui profil Anda."
+      ]
+    },
+
+    {
+      "tag": "melamar_kerja",
+      "patterns": [
+        "Tidak dapat melamar kerja",
+        "Kenapa saya tidak dapat melamar kerja ?",
+        "Mengapa saya tidak dapat melamar kerja ?",
+        "Apa penyebab saya tidak dapat melamar kerja ?"
+      ],
+      "responses": [
+        "Ada beberapa kemungkinan mengapa Anda tidak dapat mengirimkan lamaran lowongan:\n\n1. Profil JobStreet.com Anda tidak lengkap. Lengkapilah profil Anda dan ajukan lamaran sekali lagi.\n2. Login ID/kata sandi Masuk yang dimasukkan tidak valid. Masuklah ke bagian Lupa Kata sandi untuk mendapatkan ID/Kata sandi.\n3. Adanya kesalahan teknis lainnya. Kirimkanlah email kepada kami tentang pesan kesalahan tersebut. Kami akan membantu Anda sesegera mungkin."
+      ]
+    },
+
+    {
+      "tag": "pembatalan_aplikasi_kerja",
+      "patterns": [
+        "Batalkan aplikasi kerja",
+        "Bagaimana cara membatalkan suatu aplikasi kerja ?",
+        "Cara batalkan suatu aplikasi kerja gimana ya ?"
+      ],
+      "responses": [
+        "Untuk batalkan aplikasi Anda:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’.\n3. Pilih ‘Aplikasi Lamaran Online’ dari menu drop-down.\n4. Klik panah drop-down di sudut kanan atas lowongan yang telah dilamar dan pilihlah ‘Batalkan Aplikasi’.\nPerhatikan bahwa meskipun Anda telah menarik lamaran, perusahaan masih akan memiliki salinan dari profil Anda. Lamaran Anda akan ditandai sebagai ‘dibatal’ sehingga perusahaan akan mengetahui bahwa Anda tidak lagi tertarik pada lowongan tersebut.\n Jika Anda tidak sengaja menarik lamaran Anda, cukup ajukan kembali lamaran untuk lowongan yang sama. Lamaran Anda akan dikirimkan kembali."
+      ]
+    },
+
+    {
+      "tag": "penipuan_rekrutmen",
+      "patterns": [
+        "Penipuan rekrutmen",
+        "Bagaimana saya mewaspadai terhadap penipuan rekrutmen ?",
+        "Apakah penipuan rekrutmen mungkin terjadi ?"
+      ],
+      "responses": [
+        "Berhati-hatilah terhadap penipuan iklan lowongan. Iklan tersebut terkadang muncul pada situs pencarian lowongan, yang diposting oleh orang yang tidak bertanggung jawab untuk menghasilkan uang dari para pencari kerja yang tidak waspada. Anda harus berhati-hati terhadap iklan lowongan yang:\n\n1. Meminta Anda untuk membayar sejumlah uang sebelum memproses lamaran Anda atau pelatihan Anda;\n2. Meminta Anda untuk melakukan perjalanan untuk wawancara, membayar biaya penerbangan dan akomodasi untuk agensi perjalanan pihak ketiga yang ditunjuk dan berjanji untuk mengembalikan uang tersebut kemudian;\n3. Mengundang Anda untuk wawancara yang ternyata merupakan pemasaran multi-level (multi-level marketing) atau skema penjualan piramida;\n4. Menyalahgunakan informasi profil Anda untuk menjual produk (seperti asuransi, rencana investasi, dll.) kepada Anda atau membuat penawaran yang tidak berhubungan dengan lowongan yang diiklankan; atau \n5. Yang terlalu indah (muluk) untuk menjadi kenyataan, yang umumnya tidak benar, meragukan atau menyesatkan (misalnya, nama lowongan, deskripsi lowongan atau deskripsi perusahaan yang menyesatkan).\n6. Anda juga dapat berperan untuk menginformasikan kepada kami jika Anda menemukan kemungkinan penipuan tersebut. Jika Anda melihat iklan semacam itu pada JobStreet.com, silakan peringatkan kami di corpcare-id@jobstreet.com dan berikan kami informasi Nama Perusahaan dan Nama Jabatan (Posisi) terkait. Kami akan menyelidiki hal tersebut."
+      ]
+    },
+
+    {
+      "tag": "lamaran_lalu",
+      "patterns": [
+        "Melacak lamaran",
+        "Bagaimana cara melacak lamaran yang sudah lama ?",
+        "Cara melacak lamaran sudah lama yang masuk ke tempat saya gimana ya ?"
+      ],
+      "responses": [
+        "Dalam akun JobStreet.com Anda, halaman ‘Aplikasi Lamaran Online’ tetap menyimpan catatan dari semua lamaran online Anda. Anda juga dapat membatal lamaran Anda di sini jika Anda berubah pikiran atau jika Anda telah menerima tawaran lowongan lain.\n\nUntuk memeriksa status lamaran Anda:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’.\n3. Pilih ‘Aplikasi Lamaran Online’ dari menu drop-down.\n4. Status Lamaran dapat ditemukan di setiap kotak lamaran."
+      ]
+    },
+
+    {
+      "tag": "status_lamaran",
+      "patterns": [
+        "Status lamaran",
+        "Apa arti status lamaran ?",
+        "Arti dari masing-masing status lamaran apa ya ?"
+      ],
+      "responses": [
+        "Apa artinya setiap statusnya?\n\n1. Telah Diterima: Perusahaan telah menerima aplikasi Anda.\n2. Profil telah dilihat X kali oleh perusahaan: Perusahaan ini telah melihat Profil JobStreet.com Anda.\n3. Dijadwalkan untuk Wawancara: Perusahaan telah menjadwalkan wawancara dengan Anda. Lihat jadwal wawancara yang dijadwalkan pada menu MyJobStreet > Permintaan Wawancara.\n4. Tidak Sesuai: Lamaran Anda tidak sesuai dengan posisi pekerjaan ini."
+      ]
+    },
+
+    {
+      "tag": "lamaran_aktif",
+      "patterns": [
+        "Lamaran Aktif",
+        "Bagaimana cara melihat lamaran aktif dan semua lamaran saya ?",
+        "Caranya melihat lamaran aktif dan Semua Lamaran saya gimana ya ?"
+      ],
+      "responses": [
+        "Pada halaman ‘Lamaran online’, Anda memiliki pilihan untuk melihat ‘Lamaran Aktif (Active Application)’ atau ‘Semua Lamaran (All Application)’.\n\nLamaran Aktif\nDaftar ‘Lamaran Aktif’ berisi semua lowongan yang telah dilamar yang masih terbuka atau aktif, di mana Anda masih dipertimbangkan untuk mengisi posisi tersebut.\n\nSemua Lamaran\nDaftar ‘Semua Lamaran’ berisi semua lamaran yang telah Anda buat dalam 6 bulan terakhir."
+      ]
+    },
+
+    {
+      "tag": "tanggapan_perusahaan",
+      "patterns": [
+        "Tanggapan perusahaan",
+        "Mengapa saya mendapat tanggapan yang rendah dari perusahaan ?",
+        "Apa penyebab tanggapan yang rendah dari perusahaan ?"
+      ],
+      "responses": [
+        "Perusahaan yang potensial akan menghubungi Anda secara langsung baik melalui email atau telepon jika Anda terseleksi. Perhatikan bahwa keputusan untuk memilih, menyaring, menyewa dan memperbarui status lamaran Anda tergantung pada perusahaan masing-masing. Jika Anda ingin menindaklanjuti lamaran Anda, silahkan hubungi perusahaan secara langsung. JobStreet.com tidak terlibat dalam proses perekrutan, sehingga tidak akan mempengaruhi hasil seleksi.\n\nSecara umum, jika Anda tidak mendapatkan kabar dari perusahaan dalam jangka waktu 2 bulan, maka Anda dapat berasumsi bahwa lamaran tersebut belum berhasil. Jika Anda tidak mendapatkan tanggapan dari perusahaan, Anda dapat memeriksa kembali Profil JobStreet.com/resume diunggah dan pola lamaran.\n1. Apakah Profil JobStreet Anda sudah sesuai bagi diri Anda?\n2. Apakah informasi kontak Anda sudah benar?\n3. Anda pernah melamar ke posisi yang relevan yang sesuai dengan kualifikasi dan keahlian Anda?\n\nMasuklah ke Pusat pengembangan karier untuk mendapatkan beberapa tips resume dan karir yang bermanfaat."
+      ]
+    },
+
+    {
+      "tag": "permintaan_wawancara",
+      "patterns": [
+        "Permintaan wawancara",
+        "Bagaimana cara melihat informasi permintaan wawancara ?",
+        "Cara melihat jadwal yang sudah dijadwalkan kepada saya gimana ya ?"
+      ],
+      "responses": [
+        "Ketika perusahaan menjadwalkan wawancara dengan Anda melalui penjadwal wawancara JobStreet.com, Anda akan menerima email dan rincian wawancara akan ditampilkan pada akun JobStreet.com Anda (MyJobStreet > Permintaan Wawancara). Catatlah informasi tanggal, waktu, lokasi wawancara dan kontak sebagai referensi di masa mendatang.\n\nPerusahaan juga dapat memilih untuk menghubungi Anda secara langsung melalui panggilan, pesan teks atau email, selain menggunakan penjadwal wawancara dalam sistem JobStreet.com. Oleh karena itu Siagalah selalu agar jangan sampai ketinggalan suatu peluang kerja."
+      ]
+    },
+
+    {
+      "tag": "menjawab_permintaan_wawancara",
+      "patterns": [
+        "Menjawab Permintaan wawancara",
+        "Bagaimana cara menjawab permintaan wawancara ?",
+        "Cara untuk menjawab permintaan wawancara gimana ya ?"
+      ],
+      "responses": [
+        "Untuk menjawab permintaan wawancara, ikutilah langkah-langkah di bawah ini:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’.\n3. Pilih ‘Permintaan Wawancara’ dari menu drop-down.\n4. Anda akan dapat melihat permintaan wawancara.\n5. Klik ‘Terima’, ‘Tolak’ atau ‘Waktu tidak sesuai’ untuk menjawab permintaan tersebut."
+      ]
+    },
+
+    {
+      "tag": "kebijakan_wawancara",
+      "patterns": [
+        "Kebijakan wawancara",
+        "Menolak wawancara",
+        "Apakah saya dapat menolak wawancara yang sudah dijadwalkan kepada saya ?",
+        "Saya masih ragu untuk dapat melakukan wawancara"
+      ],
+      "responses": [
+        "Terima atau konfirmasilah suatu permintaan wawancara hanya jika Anda merasa yakin bahwa lowongan itu sesuai untuk Anda dan Anda dapat menghadiri wawancara tersebut tepat waktu.\n\nAnda harus mempertimbangkan jarak yang harus Anda tempuh untuk menghadiri wawancara, pengambilan cuti dari lowongan Anda saat ini dan faktor-faktor lainnya secara cermat.\n\n1. Jika Anda dipanggil untuk wawancara datanglah tepat waktu.\n2. Persiapkan diri dengan baik untuk wawancara tersebut dan lakukan tindak lanjut beberapa hari setelah wawancara tersebut.\n3. Jika Anda tidak dapat menghadiri wawancara, hubungilah perusahaan untuk memberitahukan hal tersebut minimal sehari sebelum wawancara.\n4. Jika Anda tidak menghadiri wawancara yang telah dijadwalkan dan tidak memberitahukannya kepada perusahaan, maka perusahaan berhak untuk melabeli Anda sebagai “Tidak hadir untuk wawancara” dan perusahaan lainnya dapat melihat catatan ini."
+      ]
+    },
+
+    {
+      "tag": "JELA",
+      "patterns": [
+        "JobStreet English Language Assessment (JELA)",
+        "JobStreet English Language Assessment",
+        "Penilaian Bahasa Inggris",
+        "JELA",
+        "Apa itu Jela ?",
+        "Tujuan dari tes bahasa inggris apa ya ?",
+        "Bagaimana penilaian terhadap penilaian bahasa inggris ?"
+      ],
+      "responses": [
+        "Penilaian Bahasa Inggris JobStreet.com dirancang untuk mengevaluasi tingkat penguasaan Bahasa Inggris Anda dan menunjukkan posisi Anda dibandingkan dengan rekan/sejawat.\n\nPenilaian ini mengandung empat aspek – Percakapan, Tata bahasa, Perbendaharaan dan Pemahaman, dengan 10 pertanyaan dalam masing-masing bagian. Anda mempunyai waktu 20 menit untuk menjawab semua pertanyaan tersebut. Sebuah rincian skor untuk setiap bagian akan ditampilkan setelah tes selesai."
+      ]
+    },
+
+    {
+      "tag": "ujian_penilaian",
+      "patterns": [
+        "penilaian",
+        "ujian",
+        "Bagaimana cara mengambil penilaian ?",
+        "Bagaimana cara mengambil ujian ?"
+      ],
+      "responses": [
+        "Untuk mengambil penilaian/ujian:\n\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’.\n3. Pilih ‘Penilaian Bahasa Inggris’ dari menu drop-down.\n4. Anda akan melihat halaman ‘Penilaian Bahasa Inggris’.\n5. Sekarang Anda dapat memilih untuk berlatih dulu dengan mengklik “Take Practice Now”, atau memulai penilaian segera dengan mengklik “Take Assessment Now”.\n\nBeberapa hal yang perlu perhatikan sebelum Anda memulai penilaina/ujian:\n\n1. Perhatikan bahwa waktu 20 menit dialokasikan kepada Anda untuk menyelesaikan 40 pertanyaan. Kerjakanlah dalam rentang waktu tersebut.\n2. Pastikan koneksi internet Anda stabil selama pengujian untuk menghindari akun Anda diblokir setelah kegagalan menyelesaiakan ujian yang ketiga kalinya.\n3. Setelah Anda menyelesaikan penilaian, Anda hanya dapat mengambil ujian kembali setelah 3 bulan."
+      ]
+    },
+
+    {
+      "tag": "hasil_penilaian",
+      "patterns": [
+        "Hasil penilaian",
+        "Bagaimana melihat hasil penilaian saya ?",
+        "Caranya untuk melihat hasil penilaian saya gimana ya ?"
+      ],
+      "responses": [
+        "Untuk melihat hasil penilaian Anda:\n1. Masuklah ke akun JobStreet.com Anda.\n2. Klik ‘MyJobStreet’ dan pilih ‘Ubah Profil’.\n3. Pada menu di sebelah kiri, pilihlah ‘Bahasa’. Jika Anda menggunakan tablet atau telepon seluler, ketuklah tautan ‘Ubah’ untuk membuka menunya.\n4. Anda akan dapat melihat hasil Anda di bawah kolom ‘Penilaian Bahasa Inggris JobStreet’."
+      ]
+    },
+
+    {
+      "tag": "hasil_penilaian_inggris",
+      "patterns": [
+        "Tampilkan hasil Penilaian bahasa Inggris",
+        "Sembunyikan hasil Penilaian Inggris",
+        "Bagaimana cara menampilkan hasil Penilaian bahasa Inggris ?",
+        "Bagaimana cara menyembunyikan hasil Penilaian bahasa Inggris ?",
+        "Apa tujuan menampilkan hasil penilaian bahasa inggris ?"
+      ],
+      "responses": [
+        "Anda memiliki pilihan untuk menyembunyikan hasil penilaian Inggris Anda. Namun demikian, suatu perusahaan tertentu mungkin mengharuskan Anda untuk mengambil penilaian Inggris untuk posisi tertentu. Dalam situasi ini, perusahaan akan melihat hasil penilaian Inggris Anda, tapi Anda masih memiliki pilihan untuk menyembunyikan hasil penilaian Inggris tersebut dari perusahaan lainnya.\n\nUntuk Menampilkan/Menyembunyikan hasil penilaian Inggris Anda, masuklah ke bagian ‘Bahasa’ dari Profil JobStreet.com dan centang/hapus centang pada kotak di sebelah ‘Tampilan’."
+      ]
+    },
+
+    {
+      "tag": "perbandingan_nilai",
+      "patterns": [
+        "Perbandingan nilai",
+        "Bagaimana cara membandingkan nilai saya dengan teman saya ?",
+        "Cara membandingkan nilai dengan rekan/sejawat gimana ya ?"
+      ],
+      "responses": [
+        "Setelah Anda menyelesaikan penilaian, kami akan menampilkan skor Anda dan membandingkan nilai tersebut dengan rekan/sejawat Anda.\n\nSebagai contoh:\n1. Nilai Anda lebih baik daripada 85% peserta tes dari Filipina.\n2. Nilai Anda lebih baik daripada 57% peserta tes dari Singapura dengan gelar Sarjana.\n3. Nilai Anda lebih baik daripada 72% peserta tes dari Indonesia yang mempelajari bidang administrasi bisnis.\n4. Nilai Anda lebih baik daripada 67% peserta tes dari Malaysia yang lulus di Australia.\n5. Nilai Anda lebih baik daripada 64% peserta tes dari Bangkok, Thailand.\n6. Nilai Anda lebih baik daripada 72% peserta tes dari Filipina yang menduduki posisi (jabatan) sebagai manager.\n7. Nilai Anda lebih baik daripada 68% peserta tes dari Singapura dengan spesialisasi teknik sipil."
+      ]
+    },
+
+    {
+      "tag": "ikhtisar_mobile_app",
+      "patterns": [
+        "Jobstreet mobile app",
+        "Apa itu Jobstreet mobile app ?",
+        "Apa yang dimaksud dengan Jobstreet mobile app ?"
+      ],
+      "responses": [
+        "JobStreet.com Mobile App adalah aplikasi seluler yang dapat Anda gunakan dengan mudah dan nyaman melalui perangkat seluler Anda.\n\nDengan aplikasi ini, Anda dapat mencari, melamar dan mendapatkan pemberitahuan tentang lowongan impian Anda kapan saja, di mana saja! Gunakan JobStreet.com pada perangkat iOS dan Android Anda untuk mencari lowongan dari lebih dari 230.000 perusahaan di Singapura, Malaysia, Filipina, Indonesia & Vietnam secara GRATIS."
+      ]
+    },
+
+    {
+      "tag": "keuntungan_mobile_app",
+      "patterns": [
+        "Keuntungan mobile app",
+        "Apa keuntungan dari mobile app ?",
+        "Keuntungan dari mobile app apa ya ?"
+      ],
+      "responses": [
+        "Tidak pernah melewatkan peluang karir yang lebih baik\nMendapatkan update tentang lowongan yang sesuai dengan personalisasi dan memimpin persaingan terhadap pembukaan lowongan lowongan baru melalui pemberitahuan seluler Lowongan yang Sesuai LiNa.\n\nPembaruan profil sambil jalan\nMembuat dan memperbarui Profil JobStreet.com secara mudah dari perangkat seluler Anda.\n\nMencari & melamar sesuka Anda\nMenemukan Lowongan yang sesuai dengan lokasi dan gaji pilihan Anda. Melamar lowongan lowongan yang Anda inginkan secara langsung.\n\nMenjawab dengan cepat\nTetap terupdate dengan lamaran lowongan Anda. Mendapatkan pemberitahuan saat perusahaan mulai memeriksa lamaran Anda dan menjawab undangan wawancara dengan cepat."
+      ]
+    },
+
+    {
+      "tag": "unduh_mobile_app",
+      "patterns": [
+        "Unduh mobile app",
+        "Download mobile app",
+        "Bagaimana cara mengunduh mobile app ?",
+        "Caranya mengunduh mobile app gimana ya ?"
+      ],
+      "responses": [
+        "Kompatibilitas\nAndroid: Membutuhkan Android 3.0 dan diatasnya\niOS: Membutuhkan iOS 7.0 atau diatasnya. Kompatibel dengan iPhone, iPad, dan iPod touch.\n\nWeb Seluler JobStreet.com\nTidak menggunakan salah satu sistem operasi tersebut di atas? Cukup ketikkan www.jobstreet.co.id dari telepon seluler Anda dan Anda akan secara otomatis mendapatkan versi seluler JobStreet.com. Karena tidak mensyaratkan handset secara khusus, yang Anda butuhkan hanyalah perangkat seluler dengan perambah (browser) dan koneksi internet."
+      ]
+    },
+
+    {
+      "tag": "mobile_app_fitur",
+      "patterns": [
+        "Fitur mobile app",
+        "Apa saja fitur yang ada di mobile app ?",
+        "Fitur apa saja yang ada di mobile app ?"
+      ],
+      "responses": [
+        "Anda dapat mencari lowongan berdasarkan jabatan, lokasi, gaji atau kata kunci. Untuk lebih mempersempit hasil pencarian Anda, Anda dapat menyaring pencarian dengan menentukan Spesialisasi dan Tingkat Pekerjaan.\n\nLangkah-langkahnya: Menu > Cari Lowongan > Masukkan spesifikasi pencarian dan tekan ‘Cari’ > Sesuaikan > tambahkan / edit Spesialisasi dan Tingkat Pekerjaan"
+      ]
+    },
+
+    {
+      "tag": "mobile_app_lowongan_terbaru",
+      "patterns": [
+        "Lowongan Terbaru mobile app",
+        "Bagaimana cara melihat lowongan terbaru melalui mobile app ?",
+        "Lowongan Terbaru LiNa melalui mobile app"
+      ],
+      "responses": [
+        "Anda dapat menyesuaikan preferensi lowongan Anda, seperti kata kunci, lokasi, gaji, spesialisasi dan tingkat jabatan untuk menerima informasi lowongan yang lebih relevan.\n\nTergantung pada pengaturan Anda, Anda dapat menerima pemberitahuan lencana (badge notification) dan pemberitahuan dorong (push notification) dari aplikasi ketika ada lowongan sesuai yang baru.\n\nLangkah-langkahnya: Menu > Lowongan Terbaru LiNa > Ubah"
+      ]
+    },
+
+    {
+      "tag": "mobile_app_profil",
+      "patterns": [
+        "Memperbarui Profil JobStreet mobile app",
+        "Bagaimana cara memperbarui profil JobStreet saya melalui mobile app ?",
+        "Cara untuk memperbarui profil JobStreet saya di mobile app gimana ya ?"
+      ],
+      "responses": [
+        "Dengan JobStreet.com Mobile App, Anda kini dapat dengan mudah memperbarui Profil JobStreet.com, seperti Gaji yang diharapkan, Info Kontak dan Foto Profil. Perubahan yang Anda buat dalam aplikasi akan tampak secara langsung.\n\nLangkah-langkahnya: Menu > Profil Saya > Edit"
+      ]
+    },
+
+    {
+      "tag": "mobile_app_melamar",
+      "patterns": [
+        "Melamar melalui mobile app",
+        "Bagaimana cara melamar kerja melalui mobile app ?",
+        "Caranya melamar kerja di mobile app gimana ya ?"
+      ],
+      "responses": [
+        "Jika Anda ingin melamar suatu lowongan, klik tombol “Lamar” di bagian bawah setiap deskripsi lowongan.\n\nUntuk beberapa lowongan, Anda akan melihat pesan berikut dan bukan tombol Lamaran: “Lamaran dari ponsel tidak tersedia untuk lowongan ini. Anda dapat melamar melalui website JobStreet.com.” Lowongan tersebut membutuhkan informasi atau penilaian tambahan selama proses pelamaran, sehingga Anda diharuskan mengirimkan lamaran melalui perambah (browser).\n\nLangkah-langkahnya: Iklan Lowongan > Lamar "
+      ]
+    },
+
+    {
+      "tag": "mobile_app_pemberitahuan",
+      "patterns": [
+        "Pemberitahuan melalui mobile app",
+        "Bagaimana cara mendapatkan pemberitahuan lowongan melalui mobile app ?",
+        "Caranya mendapatkan lowongan terbaru melalui mobile app gimana ya ?"
+      ],
+      "responses": [
+        "Mendapatkan pemberitahuan ketika perusahaan memeriksa lamaran Anda dan menjawab undangan wawancara dengan cepat.\n\nLangkah-langkah untuk melihat status lamaran: Menu > Lamaran Saya\n\nLangkah-langkah untuk melihat tampilan / menjawab permintaan wawancara: Menu > Pemberitahuan"
+      ]
+    },
+
+    {
+      "tag": "mobile_app_menyimpan_lowongan",
+      "patterns": [
+        "Menyimpan lowongan melalui mobile app",
+        "Bagaimana cara menyimpan lowongan kerja melalui mobile app ?",
+        "Caranya menyimpan lowongan di mobile app gimana ya ?"
+      ],
+      "responses": [
+        "Anda dapat menyimpan suatu lowongan untuk dilihat lagi nanti dengan mengeklik tombol “Simpan” pada halaman deskripsi lowongan. Untuk melihat lowongan yang disimpan,\n\nLangkah-langkahnya: Menu > Lowongan yang Disimpan"
+      ]
+    },
+
+    {
+      "tag": "mobile_app_membagikan_lowongan",
+      "patterns": [
+        "Membagikan lowongan melalui mobile app",
+        "Bagaimana cara membagikan lowongan melalui mobile app ?",
+        "Caranya membagikan lowongan melalui mobile app gimana ya ?"
+      ],
+      "responses": [
+        "Klik tombol “Bagikan” pada halaman deskripsi lowongan untuk meng-email-kan deskripsi lowongan kepada diri sendiri atau teman-teman Anda.\n\nLangkah-langkahnya: Iklan Lowongan > Bagikan"
+      ]
+    },
+
+    {
+      "tag": "mobile_app_jobs_near_me",
+      "patterns": [
+        "Jobs Near Me",
+        "Lowongan di sekitar saya",
+        "Apa itu Jobs Near Me ?",
+        "Jobs Near Me itu apa ya ?",
+        "Apa yang dimaksud dengan Jobs Near Me ?"
+      ],
+      "responses": [
+        "Jobs Near Me adalah fitur di JobStreet.com Mobile App yang membantu Anda menemukan lowongan di dekat lokasi fisik Anda (misalnya, di dekat rumah Anda, stasiun kereta api, atau di daerah terkenal).\n\nGoyangkan iPhone Anda (untuk JobStreet.com iPhone App saja)\nSetelah meluncurkan JobStreet.com iPhone App, goyangkan iPhone Anda untuk melihat semua peluang kerja di sekitar Anda. Untuk melihat lowongan yang lebih spesifik di sekitar lokasi Anda, jalankan pencarian dari halaman ‘Cari Lowongan’ seperti biasanya dengan kriteria yang diinginkan dan goyangkan iPhone Anda untuk melihat lowongan di sekitar Anda yang memenuhi kriteria tersebut saja.\n\nPengaturan ‘Layanan Lokasi’ untuk JobStreet.com iPhone App Anda harus diaktifkan agar fitur ini bisa bekerja. Untuk mengaktifkan pengaturan lokasi: Settings > Privacy > Location Services > JobStreet\n\nDapatkan arah perjalanan\nAnda bisa mendapatkan arah ke lokasi lowongan tertentu dari tempat Anda berada. Ketuklah ‘Arah (Direction)’ di peta dan aplikasi peta bawaan pada perangkat Anda akan menunjukkan arah & perkiraan waktu perjalanan ke lokasi tersebut."
       ]
     }
   ]

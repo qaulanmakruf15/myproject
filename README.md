@@ -1,4 +1,4 @@
-# Messenger Bot
+# Telegram Bot
 
 ## Project setup
 ```
@@ -14,13 +14,13 @@ python3 -m venv venv
 python3 train.py
 ```
 
-### Compiles for production
+### Setting ngrok
 ```
-python3 chat.py
+./ngrok http 8080
+copy ngrok URL from terminal and paste it to the input parameter of updater.bot.setWebhook() in bot.py
 ```
 
-### Email
+### Run bot.py
 ```
-email : beritapopuler.idn@gmail.com
+python3 bot.py
 ```
-beritapopulerpass
